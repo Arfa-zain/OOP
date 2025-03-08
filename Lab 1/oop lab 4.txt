@@ -1,0 +1,91 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.candycrush;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author ALAM-PC
+ */
+public class CandyCrush {
+
+    public CandyCrush(String PlayerName1) {
+    }
+  String PlayerName="Ali";
+  int PlayerScore=20;
+  int PlayerLevel=1;
+  
+  public String getPlayerName(){
+  return PlayerName;
+}
+  
+  public int getPlayerScore(){
+    return PlayerScore;
+}
+  public int getPlayerLevel(){
+    return PlayerLevel;
+}
+  public void setName(String PlayerName) {
+      this.PlayerName=PlayerName;
+  }
+   public void setScore(int PlayerScore) {
+      this.PlayerScore=PlayerScore;
+  }
+    public void setLevel(int PlayerLevel) {
+      this.PlayerLevel=PlayerLevel;
+  }
+    public void matchCandies() {
+        this.PlayerScore += 20;
+        System.out.println(PlayerName + " matched candies and earned 20 points!");
+    }
+     public void clearRow() {
+        this.PlayerScore += 30;
+        System.out.println(PlayerName + " cleared a row and earned 30 points!");
+    }
+      public void completeLevel() {
+        this.PlayerLevel += 1;
+        System.out.println(PlayerName + " completed level " + (PlayerLevel - 1) + " and advanced to level " + PlayerLevel + "!");
+    }
+        public void displayProgress() {
+        System.out.println("Player: " + PlayerName);
+        System.out.println("Score: " + PlayerScore);
+        System.out.println("Level: " + PlayerLevel);
+    }
+         public void performAction(int action) {
+             switch(action){
+          case 1:
+              matchCandies();
+              break;
+          case 2:
+              clearRow();
+              break;
+          case 3:
+              completeLevel();
+              break;    
+          case 4:
+               System.out.println("invalid Action");     
+      }
+        displayProgress();
+    }
+
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Enter player name: ");
+        String PlayerName = scan.nextLine();
+        CandyCrush game = new CandyCrush(PlayerName);
+
+        System.out.print("Choose an action (match_candies, clear_row, complete_level): ");
+        String action = scan.nextLine().trim();
+
+        game.performAction(action);
+    
+        scan.close();
+    }
+}
+    
+

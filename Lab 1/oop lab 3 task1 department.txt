@@ -1,0 +1,53 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author ALAM-PC
+ */
+import java.util.Scanner;
+public class Department {
+     private String deptName;
+    private String deptHead;
+
+    // Default Constructor
+    public Department() {
+        this.deptName = "Unknown";
+        this.deptHead = "Unknown";
+    }
+
+    // Parameterized Constructor
+    public Department(String deptName, String deptHead) {
+        this.deptName = deptName;
+        this.deptHead = deptHead;
+    }
+
+    // Copy Constructor
+    public Department(Department d) {
+        this.deptName = d.deptName;
+        this.deptHead = d.deptHead;
+    }
+
+    // Display function
+    public void displayDepartment() {
+        System.out.println("Department Name: " + deptName);
+        System.out.println("Department Head: " + deptHead);
+    }
+     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+ // Taking input for department
+        System.out.println("Enter Department Name: ");
+        String deptName = scanner.nextLine();
+        System.out.println("Enter Department Head: ");
+        String deptHead = scanner.nextLine();
+        
+        // Creating Department object using parameterized constructor
+        Department dept = new Department(deptName, deptHead);
+
+dept.displayDepartment();
+scanner.close();
+}
+}
